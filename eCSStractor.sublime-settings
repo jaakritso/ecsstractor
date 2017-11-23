@@ -26,6 +26,9 @@
 	// BEM Nesting. Generate nested stylesheet for preprocessors
 	"bem_nesting": false,
 
+	// Add comments to nested stylesheets for preprocessors
+	"add_comments": false,
+
 	// This settings only uses if BEM Nesting is on
 
 	// Indentation
