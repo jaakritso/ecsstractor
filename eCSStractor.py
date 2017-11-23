@@ -198,12 +198,8 @@ class EcsstractorCommand(sublime_plugin.WindowCommand):
 		for block in selectors:
 
 			if self.brackets:
-				if add_comments:
-					output += "// ." + block["name"] + "\n"
 				output += "." + block["name"] + " {\n"
 			else:
-				if add_comments:
-					output += "// ." + block["name"] + "\n"
 				output += "." + block["name"] + "\n"
 
 			indent = indentation
