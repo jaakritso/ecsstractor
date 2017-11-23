@@ -11,7 +11,7 @@ With BEM nesting:
 ![ecss_bem](https://cloud.githubusercontent.com/assets/654597/5896785/60708c5c-a54c-11e4-963f-9e00ede168c3.gif)
 
 With BEM nesting and class names as comments:
-![ecss_bem_comments](blob:https://imgur.com/1e894495-a010-4a74-8d56-2cb79b1d1bf4)
+![ecss_bem_comments](https://raw.githubusercontent.com/jaakritso/ecsstractor/master/eCSStractor-comments.mov.gif)
 
 ## Usage
 
