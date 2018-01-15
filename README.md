@@ -161,6 +161,25 @@ Run eCSStractor (BEM Nesting is on):
 
 Run eCSStractor (BEM Nesting and Comments are on):
 
+```css
+.nav {
+    /* .nav--main */
+    &--main {
+    }
+    /* .nav__item */
+    &__item {
+    }
+    /* .nav__link */
+    &__link {
+        /* .nav__link--special */
+        &--special {
+        }
+    }
+}
+```
+
+Run eCSStractor (BEM Nesting and Comments are on and comment style is SCSS):
+
 ```scss
 .nav {
     // .nav--main
