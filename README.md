@@ -111,6 +111,12 @@ Add empty line before nested element/modifier.
 
 _Default: **false**_
 
+### comment_style
+
+Comment style shows CSS (/\* \*/) or SCSS(// ) style comments. Works only with add_comments choice.
+
+_Default: **CSS**_
+
 ## Example
 
 Source:

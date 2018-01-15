@@ -47,5 +47,8 @@
 	"preprocessor.parent_symbol": "&",
 
 	// Empty line before nested element/modifier
-	"empty_line_before_nested_selector": false
+	"empty_line_before_nested_selector": false,
+
+	// Comment style. Either CSS (/* */) or SCSS (// )
+	"comment_style": "CSS"
 }

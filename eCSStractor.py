@@ -99,6 +99,15 @@ class EcsstractorCommand(sublime_plugin.WindowCommand):
 		parent_symbol = plugin_settings.get('preprocessor.parent_symbol', '&')
 		empty_line_before_nested_selector = plugin_settings.get('empty_line_before_nested_selector')
 
+		# Comment style
+		comment_style = "css"
+		comment_style = plugin_settings.get('comment_style', 'css').lower()
+		comment_symbol_beginning = "// "
+		comment_symbol_end = ""
+		if comment_style == "css":
+			comment_symbol_beginning = "/* "
+			comment_symbol_end = " */"
+
 		output = ""
 		selectors = []
 
@@ -217,16 +226,16 @@ class EcsstractorCommand(sublime_plugin.WindowCommand):
 					if self.brackets:
 						if self.brackets_newline_after:
 							if add_comments:
-								output += empty_line + indent1 + "// ." + block["name"] + modifier_separator + modifier + "\n"
+								output += empty_line + indent1 + comment_symbol_beginning + "." + block["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 							output += empty_line + indent1 + parent_symbol + modifier_separator + modifier + " {\n"
 							output += indent1 + "}\n"
 						else:
 							if add_comments:
-								output += empty_line + indent1 + "// ." + block["name"] + modifier_separator + modifier + "\n"
+								output += empty_line + indent1 + comment_symbol_beginning + "." + block["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 							output += empty_line + indent1 + parent_symbol + modifier_separator + modifier + " {}\n"
 					else:
 						if add_comments:
-							output += indent1 + "// ." + block["name"] + modifier_separator + modifier + "\n"
+							output += indent1 + comment_symbol_beginning + "." + block["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 						output += indent1 + parent_symbol + modifier_separator + modifier + "\n"
 						output += "\n"
 
@@ -236,15 +245,15 @@ class EcsstractorCommand(sublime_plugin.WindowCommand):
 					if self.brackets:
 						if self.brackets_newline_after:
 							if add_comments:
-								output += empty_line + indent1 + "// ." + block["name"] + element_separator + element["name"] + "\n"
+								output += empty_line + indent1 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + comment_symbol_end + "\n"
 							output += empty_line + indent1 + parent_symbol + element_separator + element["name"] + " {\n"
 						else:
 							if add_comments:
-								output += empty_line + indent1 + "// ." + block["name"] + element_separator + element["name"] + "\n"
+								output += empty_line + indent1 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + comment_symbol_end + "\n"
 							output += empty_line + indent1 + parent_symbol + element_separator + element["name"] + " {"
 					else:
 						if add_comments:
-							output += empty_line + indent1 + "// ." + block["name"] + element_separator + element["name"] + "\n"
+							output += empty_line + indent1 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + comment_symbol_end + "\n"
 						output += empty_line + indent1 + parent_symbol + element_separator + element["name"] + "\n"
 
 					if "modifiers" in element:
@@ -255,16 +264,16 @@ class EcsstractorCommand(sublime_plugin.WindowCommand):
 							if self.brackets:
 								if self.brackets_newline_after:
 									if add_comments:
-										output += empty_line + indent2 + "// ." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + "\n"
+										output += empty_line + indent2 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 									output += empty_line + indent2 + parent_symbol + modifier_separator + modifier + " {\n"
 									output += indent2 + "}\n"
 								else:
 									if add_comments:
-										output += empty_line + indent2 + "// ." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + "\n"
+										output += empty_line + indent2 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 									output += empty_line + indent2 + parent_symbol + modifier_separator + modifier + " {}\n"
 							else:
 								if add_comments:
-									output += empty_line + indent2 + "// ." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + "\n"
+									output += empty_line + indent2 + comment_symbol_beginning + "." + block["name"] + element_separator + element["name"] + modifier_separator + modifier + comment_symbol_end + "\n"
 								output += empty_line + indent2 + parent_symbol + modifier_separator + modifier + "\n"
 								output += "\n"
 
